@@ -1,0 +1,88 @@
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        <div class="card">
+        <div class="card-header"><strong>Modificar Cliente</strong></div>
+        <div class="card-body">
+            <div class="row form-group">
+                <label class="col-md-3 col-form-label" for="text-input">Buscar por DNI</label>
+                <div class="col-md-6"><input _ngcontent-cgj-c3="" class="form-control" placeholder="Ingrese DNI" type="text"></div>
+                <div class="col-md-3 d-flex justify-content-center"><button class="btn btn-success" (click)="buscarByDNI()">Buscar</button></div>
+            </div>
+
+
+            <table class="table table-responsive-sm">
+                <thead>
+                    <tr>
+                        <th>Nombre</th><th>Apellido Paterno</th><th>Apellido Materno</th><th>Teléfono</th><th>Dirección</th><th>Distrito</th><th>Código</th><th>Editar</th><th>Deshabilitar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juan</td>
+                        <td>Perez</td>
+                        <td>Gomez</td>
+                        <td>2567263</td>
+                        <td>st5 gr 7 mz r lte 2</td>
+                        <td>villa el salvador</td>
+                        <td>fhe56</td>
+                        <td><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#warningModal" (click)="editarModal.show(); "><i class="c-icon c-icon-2xl mt-5 cui-pencil"></i></button></td>
+                        <!-- id_usuario_funcion(usuario.id_usuario) -->
+                        <td><button class="btn btn-danger" type="button" data-toggle="modal" data-target="#warningModal" (click)="deshabilitarModal.show(); "><i class="c-icon c-icon-2xl mt-5 cui-trash"></i></button></td>
+                    </tr>
+
+ 
+                
+                </tbody>
+            </table>
+            <ul class="pagination d-flex justify-content-center">
+                <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div bsModal #editarModal="bs-modal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modificar cliente</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"  (click)="editarModal.hide()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" >
+            ¿Esta seguro que desea Cancelar el Pedido? <br>
+            * Solo podra cancelar pedidos que aun no esten entregados.
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" (click)="editarModal.hide()">SI</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="editarModal.hide()">NO</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div bsModal #deshabilitarModal="bs-modal" class="modal fade" id="dangerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-danger" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h4 class="modal-title">Deshabilitar</h4>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="modal-body">
+    <p>¿Está seguro que desea deshabilitar?</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="deshabilitarModal.hide()">SI</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deshabilitarModal.hide()">NO</button>
+    </div>
+    </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,24 @@
+<div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+            <div class="card-header"><strong>Formulario Usuario</strong></div>
+            <div class="card-body">
+                <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="email-input">Correo</label>
+                        <div class="col-md-9">
+                            <input class="form-control" id="email-input" type="email" name="email-input" placeholder="" autocomplete="email" [(ngModel)]="usuario.correo_usuario"><span class="help-block">Por favor ingrese un correo</span>
+                        </div>
+                    </div>
+         
+                </form>
+            </div>
+        
+        
+            <div class="card-footer d-flex justify-content-end">
+                <button class="btn btn-success " type="submit" (click)="crearUsuario()">Guardar</button>
+            </div>
+            </div>
+           
+        </div>
+    </div>

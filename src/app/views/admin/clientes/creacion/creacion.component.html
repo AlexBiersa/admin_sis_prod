@@ -1,0 +1,111 @@
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+        <div class="card-header"><strong>Formulario Cliente</strong></div>
+        <div class="card-body">
+            <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="text-input">DNI</label>
+                    <div class="col-md-9">
+                        <input class="form-control required-text" id="text-input" type="text" name="text-input" placeholder="" [(ngModel)]="cliente.dni_cliente"><span class="help-block text-danger" *ngIf="valor">Ingresa DNI</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="text-input">Nombre</label>
+                    <div class="col-md-9">
+                        <input class="form-control required-text" id="text-input" type="text" name="text-input" placeholder="" [(ngModel)]="cliente.nombre_cliente"><span class="help-block text-danger" *ngIf="valor">Ingresa nombre</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="text-input">Apellido Paterno</label>
+                    <div class="col-md-9">
+                        <input class="form-control required-text" id="text-input" type="text" name="text-input" placeholder="" [(ngModel)]="cliente.apepat_cliente"><span class="help-block  text-danger" *ngIf="valor">Ingresa apellido paterno</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="text-input">Apellido Materno</label>
+                    <div class="col-md-9">
+                        <input class="form-control required-text" id="text-input" type="text" name="text-input" placeholder="" [(ngModel)]="cliente.apemat_cliente"><span class="help-block  text-danger" *ngIf="valor">Ingresa apellido materno</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="text-input">Teléfono</label>
+                    <div class="col-md-9">
+                        <input class="form-control  required-text" id="text-input" type="text" name="text-input" placeholder="" [(ngModel)]="cliente.telefono_cliente"><span class="help-block  text-danger" *ngIf="valor">Ingresa teléfono</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="text-input">Dirección</label>
+                    <div class="col-md-9">
+                        <input class="form-control required-text" id="text-input" type="text" name="text-input" placeholder="" [(ngModel)]="cliente.direccion_cliente"><span class="help-block  text-danger" *ngIf="valor">Ingresa dirección</span>
+                    </div>
+                </div>
+    
+    
+                <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="select1">Distrito</label>
+                    <div class="col-md-9">
+                    <select class="form-control required-text" id="select1" name="select1" [(ngModel)]="cliente.distrito_cliente">
+                        <option value="0" disabled>Seleccionar</option>
+                        <option value="ancon">ANCON</option>
+                        <option value="ate">ATE</option>
+                        <option value="barranco">BARRANCO</option>
+                        <option value="breña">BREÑA</option>
+                        <option value="carabayllo">CARABAYLLO</option>
+                        <option value="chaclacayo">CHACLACAYO</option>
+                        <option value="chorrillos">CHORRILLOS</option>
+                        <option value="cieneguilla">CIENEGUILLA</option>
+                        <option value="comas">COMAS</option>
+                        <option value="el agustino">EL AGUSTINO</option>
+                        <option value="independencia">INDEPENDENCIA</option>
+                        <option value="jesus maria">JESUS MARIA</option>
+                        <option value="la molina">LA MOLINA</option>
+                        <option value="la victoria">LA VICTORIA</option>
+                        <option value="lima">LIMA</option>
+                        <option value="lince">LINCE</option>
+                        <option value="los olivos">LOS OLIVOS</option>
+                        <option value="lurigancho">LURIGANCHO</option>
+                        <option value="lurin">LURIN</option>
+                        <option value="magdalena del mar">MAGDALENA DEL MAR</option>
+                        <option value="miraflores">MIRAFLORES</option>
+                        <option value="pachacamac">PACHACAMAC</option>
+                        <option value="pucusana">PUCUSANA</option>
+                        <option value="pueblo libre">PUEBLO LIBRE</option>
+                        <option value="puente piedra">PUENTE PIEDRA</option>
+                        <option value="punta hermosa">PUNTA HERMOSA</option>
+                        <option value="punta negra">PUNTA NEGRA</option>
+                        <option value="rimac">RIMAC</option>
+                        <option value="san bartolo">SAN BARTOLO</option>
+                        <option value="san borja">SAN BORJA</option>
+                        <option value="san isidro">SAN ISIDRO</option>
+                        <option value="san juan de lurigancho">SAN JUAN DE LURIGANCHO</option>
+                        <option value="san juan de miraflores">SAN JUAN DE MIRAFLORES</option>
+                        <option value="san luis">SAN LUIS</option>
+                        <option value="san martin de porres">SAN MARTIN DE PORRES</option>
+                        <option value="san miguel">SAN MIGUEL</option>
+                        <option value="santa anita">SANTA ANITA</option>
+                        <option value="santa maria del mar">SANTA MARIA DEL MAR</option>
+                        <option value="santa rosa">SANTA ROSA</option>
+                        <option value="santiago de surco">SANTIAGO DE SURCO</option>
+                        <option value="surquillo">SURQUILLO</option>
+                        <option value="villa el salvador">VILLA EL SALVADOR</option>
+                        <option value="villa maria del triunfo">VILLA MARIA DEL TRIUNFO</option>
+                    </select>
+                    <span class="help-block  text-danger" *ngIf="valor">Ingresa distrito</span>
+                    </div>
+                </div>
+    
+               
+    
+            </form>
+        </div>
+    
+        
+        <div class="card-footer d-flex justify-content-end">
+            <button class="btn btn-success " type="submit" (click)="crearCliente (cliente)">Guardar</button>
+        </div>
+    </div>
+
+    <div class="alert alert-success" role="alert" *ngIf="estado=='Success'">Registro Exitoso</div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+            <div class="card-header"><strong>Reporte por distrito</strong></div>
+            <div class="card-body">
+                <div class="row form-group">
+                    <label class="col-md-3 col-form-label" for="text-input">Distrito</label>
+                    <div class="col-md-6">
+                        <select class="form-control" id="select1" name="select1">
+                                <option value="0" disabled>Seleccionar</option>
+                                <option value="ancon">ANCON</option>
+                                <option value="ate">ATE</option>
+                                <option value="barranco">BARRANCO</option>
+                                <option value="breña">BREÑA</option>
+                                <option value="carabayllo">CARABAYLLO</option>
+                                <option value="chaclacayo">CHACLACAYO</option>
+                                <option value="chorrillos">CHORRILLOS</option>
+                                <option value="cieneguilla">CIENEGUILLA</option>
+                                <option value="comas">COMAS</option>
+                                <option value="el agustino">EL AGUSTINO</option>
+                                <option value="independencia">INDEPENDENCIA</option>
+                                <option value="jesus maria">JESUS MARIA</option>
+                                <option value="la molina">LA MOLINA</option>
+                                <option value="la victoria">LA VICTORIA</option>
+                                <option value="lima">LIMA</option>
+                                <option value="lince">LINCE</option>
+                                <option value="los olivos">LOS OLIVOS</option>
+                                <option value="lurigancho">LURIGANCHO</option>
+                                <option value="lurin">LURIN</option>
+                                <option value="magdalena del mar">MAGDALENA DEL MAR</option>
+                                <option value="miraflores">MIRAFLORES</option>
+                                <option value="pachacamac">PACHACAMAC</option>
+                                <option value="pucusana">PUCUSANA</option>
+                                <option value="pueblo libre">PUEBLO LIBRE</option>
+                                <option value="puente piedra">PUENTE PIEDRA</option>
+                                <option value="punta hermosa">PUNTA HERMOSA</option>
+                                <option value="punta negra">PUNTA NEGRA</option>
+                                <option value="rimac">RIMAC</option>
+                                <option value="san bartolo">SAN BARTOLO</option>
+                                <option value="san borja">SAN BORJA</option>
+                                <option value="san isidro">SAN ISIDRO</option>
+                                <option value="san juan de lurigancho">SAN JUAN DE LURIGANCHO</option>
+                                <option value="san juan de miraflores">SAN JUAN DE MIRAFLORES</option>
+                                <option value="san luis">SAN LUIS</option>
+                                <option value="san martin de porres">SAN MARTIN DE PORRES</option>
+                                <option value="san miguel">SAN MIGUEL</option>
+                                <option value="santa anita">SANTA ANITA</option>
+                                <option value="santa maria del mar">SANTA MARIA DEL MAR</option>
+                                <option value="santa rosa">SANTA ROSA</option>
+                                <option value="santiago de surco">SANTIAGO DE SURCO</option>
+                                <option value="surquillo">SURQUILLO</option>
+                                <option value="villa el salvador">VILLA EL SALVADOR</option>
+                                <option value="villa maria del triunfo">VILLA MARIA DEL TRIUNFO</option>
+                            </select>
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-center"><button class="btn btn-success">Buscar</button></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-1"><button class="btn btn-success">Exportar</button></div>
+                    <div class="col-md-1"><button class="btn btn-success">Importar</button></div>
+                </div>
+    
+    
+                <table class="table table-responsive-sm">
+                    <thead>
+                        <tr>
+                            <th>Nombre Cliente</th><th>DNI Cliente</th><th>Código suministro</th><th>Tipo de medidor</th><th>Modelo medidor</th><th>Fecha instalación</th><th>Código medidor</th><th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Giacomo Guzman</td>
+                            <td>12313821</td>
+                            <td>Peldi</td>
+                            <td>se cambio</td>
+                            <td>afv56g</td>
+                            <td>03/12/18</td>
+                            <td>dk4kga</td>
+                            <td><span class="badge badge-success p-2" *ngIf="true">Optimo</span><span class="badge badge-danger p-2" *ngIf="false">Caducado</span></td>
+                        </tr>
+    
+    
+                    
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </div>
+    
