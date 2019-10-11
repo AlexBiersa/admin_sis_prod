@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-
 import { UsuarioService } from '../../../../services/usuario.service';
 
 @Component({
@@ -9,9 +8,9 @@ import { UsuarioService } from '../../../../services/usuario.service';
   styleUrls: ['./modificacion.component.scss']
 })
 export class ModificacionComponent implements OnInit {
-  
-  
+ 
   dni:number;
+  clientes=[];
   closeResult: string;
   constructor(
     private _usuarioService: UsuarioService,
@@ -19,17 +18,35 @@ export class ModificacionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.listarclientes();
+    console.log('cli', this.clientes);
   }
 
-
-  buscarByDNI(){
+  listarclientes(){
     this._usuarioService.listarClientes().subscribe(
       data=>{
-        console.log(data);
-        
+        if (data.clientes.length!=0) {
+          this.clientes=data.clientes;
+          console.log(data.clientes);
+        }else{
+          console.log("warn!!!")
+        }
+      }
+    )
+  }
+  buscarByDNI(){
+    this._usuarioService.listarClientesPorDNI(this.dni).subscribe(
+      data=>{
+        // console.log(data);
+        if (data.clientes.length!=0) {
+          this.clientes=data.clientes;
+          console.log(data.clientes);
+        }else{
+          console.log("warn!!!")
+        }
       },
       error=>{
-        console.log(<any>error);
+        console.log('erro12',<any>error);
       }
     )
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from '../../../../services/usuario.service';
 
 @Component({
   selector: 'app-registrar-suministro',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarSuministroComponent implements OnInit {
 
-  constructor() { }
+  public suministro = {
+    codigo_suministro :'',
+    fecha_instalacion: ''
+  }
+
+  constructor(
+    private _usuarioService: UsuarioService,
+  ) { }
 
   ngOnInit() {
+  }
+
+  registra_Suministro(){
+    console.log(this.suministro);
+    this._usuarioService.registrarSuministro(this.suministro).subscribe(
+      data=> {
+        console.log('data',data);
+      },
+      error=> {
+        console.log('error',error)
+      }
+    )
   }
 
 }

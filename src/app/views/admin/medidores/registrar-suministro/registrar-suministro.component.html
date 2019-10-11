@@ -7,13 +7,13 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">Código suministro</label>
                         <div class="col-md-9">
-                            <input class="form-control" id="text-input" type="text" name="text-input" placeholder="">
+                            <input class="form-control" id="text-input" type="text" name="text-input" placeholder="Codigo de suministro" [(ngModel)]="suministro.codigo_suministro" name='codigo'>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="text-input">Fecha creación suministro</label>
                         <div class="col-md-9">
-                            <input class="form-control" id="date-input" type="date" name="date-input" placeholder="date">
+                            <input class="form-control" id="date-input" type="date" name="date-input" placeholder="date" [(ngModel)]="suministro.fecha_instalacion" name='date'>
                         </div>
                     </div> 
         
@@ -22,7 +22,7 @@
         
         
             <div class="card-footer d-flex justify-content-end">
-                <button class="btn btn-success " type="submit">Guardar</button>
+                <button class="btn btn-success " type="submit" (click)='registra_Suministro()'>Guardar</button>
             </div>
             </div>
            

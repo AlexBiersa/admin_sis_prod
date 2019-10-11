@@ -20,6 +20,9 @@ export class CreacionUsuarioComponent implements OnInit {
   }
 
   crearUsuario(){
+    console.log(this.usuario);
+    if (this.validarInputs()) {
+      console.log('2',this.usuario);
       this._usuarioService.registrarUsuarios(this.usuario).subscribe(
         data=>{
           // this.ngOnInit();
@@ -32,8 +35,27 @@ export class CreacionUsuarioComponent implements OnInit {
           // console.log(<any>error);
         }
       )
+    }
   }
 
+
+  validarInputs() {
+    //let list=<HTMLInputElement><any>document.getElementsByClassName("required-text");
+    var flag = true;
+    for (var _i = 0; _i < 1; _i++) {
+      var textInput = <HTMLInputElement>document.getElementsByClassName("required-text")[_i];
+      console.log('text',textInput.value);
+      console.log(textInput.value==='');
+      if (textInput.value === "" || textInput.value === "0") {
+        textInput.classList.add("is-invalid");
+        return false;
+      } else {
+        textInput.classList.remove("is-invalid");
+        return true;
+      }
+    }
+    return flag;
+  }
 
 
   

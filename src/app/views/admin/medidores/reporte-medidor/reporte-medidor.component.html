@@ -5,8 +5,8 @@
             <div class="card-body">
                 <div class="row form-group">
                     <label class="col-md-3 col-form-label" for="text-input">Código medidor</label>
-                    <div class="col-md-6"><input _ngcontent-cgj-c3="" class="form-control" placeholder="" type="text"></div>
-                    <div class="col-md-3 d-flex justify-content-center"><button class="btn btn-success">Buscar</button></div>
+                    <div class="col-md-6"><input _ngcontent-cgj-c3="" class="form-control" placeholder="" type="text" [(ngModel)]="codigo_medidor" name='codigo'></div>
+                    <div class="col-md-3 d-flex justify-content-center"><button class="btn btn-success" (click)='reporte_medidor()'>Buscar</button></div>
                 </div>
                 <div class="row form-group">
                     <div class="col-md-1"><button class="btn btn-success">Exportar</button></div>
@@ -17,19 +17,27 @@
                 <table class="table table-responsive-sm">
                     <thead>
                         <tr>
-                            <th>Nombre Cliente</th><th>DNI Cliente</th><th>Código suministro</th><th>Tipo de medidor</th><th>Modelo medidor</th><th>Fecha instalación</th><th>Código medidor</th><th>Estado</th>
+                            <th>Nombre Cliente</th>
+                            <th>DNI Cliente</th>
+                            <th>Código suministro</th>
+                            <th>Tipo de medidor</th>
+                            <th>Tarifa de medidor</th>
+                            <th>Modelo medidor</th>
+                            <th>Fecha instalación</th>
+                            <th>Estado</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Giacomo Guzman</td>
-                            <td>12313821</td>
-                            <td>Peldi</td>
-                            <td>se cambio</td>
-                            <td>afv56g</td>
-                            <td>03/12/18</td>
-                            <td>dk4kga</td>
-                            <td><span class="badge badge-success p-2" *ngIf="true">Optimo</span><span class="badge badge-danger p-2" *ngIf="false">Caducado</span></td>
+                        <tr *ngFor="let medidor of medidores">
+                            <td>{{medidor.nombre_cliente}} {{medidor.apepat_cliente}} {{medidor.apemat_cliente}}</td>
+                            <td>{{medidor.dni_cliente}}</td>
+                            <td>{{medidor.codigo_suministro}}</td>
+                            <td>{{medidor.tipo_uso_medidor}}</td>
+                            <td>{{medidor.tarifa_medidor}}</td>
+                            <td>{{medidor.modelo_medidor}}</td>
+                            <td>{{medidor.fecha_instalacion}}</td>
+                            <td *ngIf="medidor.valor==1"><span class="badge badge-success p-2" >Optimo</span>
+                            <td *ngIf="medidor.valor==2"><span class="badge badge-danger p-2" >Caducado</span></td>
                         </tr>
     
     

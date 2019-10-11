@@ -10,7 +10,10 @@ import { NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 export class LoginComponent { 
   
   public loading = false;
-
+  public usuario = {
+    correo_usuario:'',
+    password_usuario :''
+  }
   constructor(
     config: NgbModalConfig,
     private _router: Router,
@@ -24,22 +27,25 @@ export class LoginComponent {
     localStorage.clear();
   }
 
-  login(content) {
-    this.loading = true;
-    let id_perfil = 1;
-    if(id_perfil===1){
-        this.loading = false;
-        this._router.navigate(['/home']);
-    } else if(id_perfil===2){
-        this.loading = false;
-        this._router.navigate(['/home-proveedor']);
-    }else if(id_perfil===4){
-        this.loading = false;
-        this._router.navigate(['/home-call-center']);;
-    } else{
-        this.loading = false;
-        this._router.navigate(['/login']);
-    }
+  login() {
+    console.log('usuario',this.usuario)
+    this._usuarioService.loginUsuario(this.usuario).subscribe(
+      data=>{
+        this.loading = true;
+        let id_perfil = 1;
+        console.log('entro');
+        localStorage.setItem('token',data.token);
+        localStorage.setItem('usuario','1');
+        if(id_perfil===1){
+            this.loading = true;
+            console.log('entro2');
+            this._router.navigate(['/home']);
+        }
+      },
+      error=>{
+        console.log('error',error);
+      }
+    );
   }
 }
 

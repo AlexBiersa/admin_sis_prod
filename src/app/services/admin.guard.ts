@@ -13,10 +13,11 @@ export class AdminGuard implements CanActivate{
     ){}
     canActivate(){
         let identity = this._usuarioService.getIdentity();
-        if(identity && identity.id_perfil===1){
+        if(identity){
+            console.log('iden',identity);
             return true;
         }else{
-            this._router.navigate(['/']);
+            this._router.navigate(['/login']);
             return false;
         }
         

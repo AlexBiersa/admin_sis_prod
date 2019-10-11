@@ -9,6 +9,7 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { TerminosComponent } from './views/terminos/terminos.component';
+import { AdminGuard } from './services/admin.guard';
 
 export const routes: Routes = [
   /*paginas fuera del panel*/
@@ -57,6 +58,7 @@ export const routes: Routes = [
   {
     path: 'home',
     component: DefaultLayoutComponent,
+    canActivate:[AdminGuard],
     data: {
       title: 'Home'
     },
